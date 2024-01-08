@@ -6,4 +6,5 @@ pub mod core;
 mod ffi;
 mod macros;
 
+pub use core::*;
 pub use ffi::ConnectionStatus;
