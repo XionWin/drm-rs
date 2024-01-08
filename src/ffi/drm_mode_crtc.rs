@@ -3,17 +3,12 @@
 pub struct DrmModeCrtc {
     pub crtc_id: libc::c_uint,
     pub buffer_id: libc::c_uint,
-
     pub x: libc::c_int,
     pub y: libc::c_int,
-
     pub width: libc::c_int,
     pub height: libc::c_int,
-
     pub mode_valid: libc::c_int,
-
     pub mode: crate::ffi::models::DrmModeInfo,
-
     pub gamma_size: libc::c_int,
 }
 
