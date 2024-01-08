@@ -1,7 +1,10 @@
+use std::os::unix::prelude::RawFd;
+
 use crate::core::{Connector, Crtc, Encoder};
 
 #[derive(Debug)]
 pub struct Drm {
+    pub fd: RawFd,
     pub handle: *const crate::ffi::DrmModeRes,
     pub connector: Connector,
     pub encoder: Encoder,
@@ -39,11 +42,16 @@ impl Drm {
         };
         
         Self{
+            fd,
             handle,
             connector,
             encoder,
             crtc,
         }
+    }
+
+    pub fn get_fd(&self) -> RawFd {
+        self.fd
     }
     
     pub fn get_mode(&self) -> &crate::core::ModeInfo {
