@@ -40,7 +40,7 @@ impl ModeInfo {
             vrefresh: mi.vrefresh,
             flags: mi.flags,
             mode_type: mi.mode_type,
-            name: get_name(mi),
+            name: crate::util::get_string_from_chars(&mi.name),
         }
     }
 
@@ -53,9 +53,9 @@ impl ModeInfo {
     }
 }
 
-fn get_name(mi: &crate::ffi::models::DrmModeInfo) -> String {
-    String::from(
-        std::ffi::CStr::from_bytes_until_nul(&mi.name).unwrap().to_str().unwrap()
-    )
-} 
+// fn get_name(mi: &crate::ffi::models::DrmModeInfo) -> String {
+//     String::from(
+//         std::ffi::CStr::from_bytes_until_nul(&mi.name).unwrap().to_str().unwrap()
+//     )
+// } 
 
