@@ -51,6 +51,10 @@ impl ModeInfo {
     pub fn get_handle(&self) -> *const libc::c_void {
         self.handle as _
     }
+
+    pub fn get_name(&self) -> &str {
+        &self.name
+    }
 }
 
 // fn get_name(mi: &crate::ffi::models::DrmModeInfo) -> String {
