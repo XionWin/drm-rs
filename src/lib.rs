@@ -7,4 +7,4 @@ mod ffi;
 mod macros;
 
 pub use core::*;
-pub use ffi::ConnectionStatus;
+pub use ffi::*;
