@@ -13,5 +13,5 @@ pub use drm_mode_connector::*;
 pub use drm_mode_encoder::*;
 pub use drm_mode_crtc::*;
 pub use drm_mode_fb::*;
-pub use drm_mode_page::*;
+// pub use drm_mode_page::*;
 pub use enums::ConnectionStatus;

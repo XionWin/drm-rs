@@ -12,4 +12,4 @@ pub use crtc::*;
 pub use encoder::*;
 pub use fb::*;
 pub use mode_info::*;
-pub use page::*;
+// pub use page::*;
