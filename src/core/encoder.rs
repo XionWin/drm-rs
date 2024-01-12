@@ -34,7 +34,7 @@ impl Drop for Encoder {
     fn drop(&mut self) {
         unsafe {
             crate::ffi::drmModeFreeEncoder(self.handle);
-            colored_rs::print_debug!("Encoder: {:#?} droped", self.handle);
+            colored_rs::print_debug!("Encoder: {:?} droped", self.handle);
         }
     }
 }

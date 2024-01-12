@@ -29,7 +29,7 @@ impl Drop for Framebuffer {
     fn drop(&mut self) {
         unsafe {
             crate::ffi::drmModeFreeFB(self.handle);
-            colored_rs::print_debug!("Framebuffer: {:#?} droped", self.handle);
+            colored_rs::print_debug!("Framebuffer: {:?} droped", self.handle);
         }
     }
 }

@@ -99,7 +99,7 @@ impl Drop for Drm {
     fn drop(&mut self) {
         unsafe {
             crate::ffi::drmModeFreeResources(self.handle);
-            colored_rs::print_debug!("Drm: {:#?} droped", self.handle);
+            colored_rs::print_debug!("Drm: {:?} droped", self.handle);
         }
     }
 }

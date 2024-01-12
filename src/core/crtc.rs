@@ -46,7 +46,7 @@ impl Drop for Crtc {
     fn drop(&mut self) {
         unsafe {
             crate::ffi::drmModeFreeCrtc(self.handle);
-            colored_rs::print_debug!("Crtc: {:#?} droped", self.handle);
+            colored_rs::print_debug!("Crtc: {:?} droped", self.handle);
         }
     }
 }
