@@ -16,9 +16,9 @@ pub fn vertical_synchronize(fd: RawFd, crtc_id: libc::c_uint, fb: libc::c_uint) 
     }
 
     while user_data != 0 {
-        let r = handle_event(fd, &evt_context as *const _ as _);
+        let r = handle_event(fd, &evt_context);
         if r != 0 {
-            panic!("handle_event result: {:?}", r);
+            panic!("handle_event_result: {:?}", r);
         }
     }
 }
