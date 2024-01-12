@@ -23,7 +23,6 @@ pub fn vertical_synchronize(fd: RawFd, crtc_id: libc::c_uint, fb: libc::c_uint) 
     }
 }
 
-
 pub fn page_flip(
     fd: RawFd,
     crtc_id: libc::c_uint,
