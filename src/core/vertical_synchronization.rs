@@ -2,7 +2,7 @@ use std::os::unix::prelude::RawFd;
 use crate::models::EventContext;
 
 
-pub fn vertical_synchronize(fd: std::os::fd::RawFd, crtc_id: libc::c_uint, fb: libc::c_uint) {
+pub fn vertical_synchronize(fd: RawFd, crtc_id: libc::c_uint, fb: libc::c_uint) {
     let evt_context = EventContext {
         version: DRM_CONTEXT_VERSION,
         vblank_handler,
