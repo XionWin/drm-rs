@@ -6,7 +6,7 @@ pub struct DrmModeProperty {
     pub(crate) flags: libc::c_uint,
     pub(crate) name: [libc::c_char; DRM_NAME_STRING_LEN],
     pub(crate) count_values: libc::c_int,
-	pub(crate) values: *const libc::c_uint,
+	pub(crate) values: *const libc::c_ulong,
 	pub(crate) count_enums: libc::c_int,
     pub(crate) enums: *const DrmModePropertyEnum
 }
@@ -14,9 +14,10 @@ pub struct DrmModeProperty {
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct DrmModePropertyEnum {
-	pub(crate) value: libc::c_uint,
+	pub(crate) value: libc::c_ulong,
     pub(crate) name: [libc::c_char; DRM_NAME_STRING_LEN],
 }
+
 
 #[link(name = "drm")]
 #[allow(improper_ctypes, dead_code)]
