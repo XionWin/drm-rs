@@ -1,9 +1,10 @@
+const DRM_NAME_STRING_LEN: usize = 32usize;
 #[repr(C)]
 #[derive(Debug)]
 pub struct DrmModePropertyPtr {
     prop_id: libc::c_uint,
     flags: libc::c_uint,
-    name: [libc::c_char; 32usize],
+    name: [libc::c_char; DRM_NAME_STRING_LEN],
     count_values: libc::c_int,
 	values: *const libc::c_uint,
 	count_enums: libc::c_int,
@@ -14,7 +15,7 @@ pub struct DrmModePropertyPtr {
 #[derive(Debug)]
 pub struct DrmModePropertyEnum {
 	value: libc::c_uint,
-    name: [libc::c_char; 32usize],
+    name: [libc::c_char; DRM_NAME_STRING_LEN],
 }
 
 #[link(name = "drm")]
