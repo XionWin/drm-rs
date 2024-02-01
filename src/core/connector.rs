@@ -59,5 +59,5 @@ impl Drop for Connector {
 fn get_modes(c: &crate::ffi::DrmModeConnector) -> Vec<crate::core::ModeInfo> {
     unsafe {std::slice::from_raw_parts(c.modes, c.count_modes as usize)}.iter().map(|x| {
         crate::core::ModeInfo::new(x)
-    }).collect::<Vec<crate::core::ModeInfo>>()
+    }).collect::<Vec<_>>()
 }

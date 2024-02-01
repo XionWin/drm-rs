@@ -65,7 +65,7 @@ impl Drm {
         unsafe {
             std::slice::from_raw_parts(r.crtcs, r.count_crtcs as usize).iter().map(|x| {
                 crate::core::Crtc::new(crate::ffi::drmModeGetCrtc(fd, *x).as_ref().unwrap())
-            }).collect::<Vec<crate::core::Crtc>>()
+            }).collect::<Vec<_>>()
         }
     }
     
@@ -73,7 +73,7 @@ impl Drm {
         unsafe {
             std::slice::from_raw_parts(r.connectors, r.count_connectors as usize).iter().map(|x| {
                 crate::core::Connector::new(crate::ffi::drmModeGetConnector(fd, *x).as_ref().unwrap())
-            }).collect::<Vec<crate::core::Connector>>()
+            }).collect::<Vec<_>>()
         }
     }
 
@@ -81,7 +81,7 @@ impl Drm {
         unsafe {
             std::slice::from_raw_parts(r.encoders, r.count_encoders as usize).iter().map(|x| {
                 crate::core::Encoder::new(crate::ffi::drmModeGetEncoder(fd, *x).as_ref().unwrap())
-            }).collect::<Vec<crate::core::Encoder>>()
+            }).collect::<Vec<_>>()
         }
     }
 
@@ -89,7 +89,7 @@ impl Drm {
         unsafe {
             std::slice::from_raw_parts(r.fbs, r.count_fbs as usize).iter().map(|x| {
                 crate::core::Framebuffer::new( crate::ffi::drmModeGetFB(fd, *x).as_ref().unwrap())
-            }).collect::<Vec<crate::core::Framebuffer>>()
+            }).collect::<Vec<_>>()
         }
     }
 
